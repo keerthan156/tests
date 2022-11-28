@@ -6,7 +6,7 @@ pipeline{
 	stages{
 		stage('Deploy to remote'){
 			steps{
-				sh 'scp -r ${WORKSPACE}/* jk-vm@${staging_server}:/var/www/html/'
+				sh 'scp -r -v -o stricthostkeychecking=no ${WORKSPACE}/* jk-vm@${staging_server}:/var/www/html/'
 			}
 		}
 	}
