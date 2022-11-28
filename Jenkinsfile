@@ -6,7 +6,7 @@ pipeline{
 	stages{
 		stage('Deploy to remote'){
 			steps{
-				sh 'scp -r ${WORKSPACE}/* ibllnxmetpyth@${staging_server}:/var/www/html/'
+				sh 'scp -r -P 22 ${WORKSPACE}/* ibllnxmetpyth@${staging_server}:/var/www/html/'
 			}
 		}
 	}
