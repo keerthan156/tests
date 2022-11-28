@@ -7,7 +7,7 @@ pipeline{
 	stages{
 		stage('Deploy to remote'){
 			steps{
-				sh 'scp -r -p ${pass} -v -o stricthostkeychecking=no ${WORKSPACE}/* ibllnxreps2admin@${staging_server}:/var/www/html/'
+				sh 'scp -r -v -P 22 -o stricthostkeychecking=no ${WORKSPACE}/* ibllnxreps2admin@${staging_server}:/var/www/html/'
 			}
 		}
 	}
