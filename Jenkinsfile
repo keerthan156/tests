@@ -1,12 +1,12 @@
 pipeline{
 	agent any
 	environment{
-		staging_server="20.121.122.115"
+		staging_server="168.61.51.87"
 	}
 	stages{
 		stage('Deploy to remote'){
 			steps{
-				sh 'scp -p I$b6R!D1g2E02S1PymAA -r -P 22 ${WORKSPACE}/* ibllnxmetpyth@${staging_server}:/var/www/html/'
+				sh 'scp -r ${WORKSPACE}/* ibllnxreps2admin@${staging_server}:/var/www/html/'
 			}
 		}
 	}
